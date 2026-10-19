@@ -75,7 +75,7 @@ const categoryConfig = {
       {engineeringImpacts.map((item, idx) => {
         const config = categoryConfig[item.category] || categoryConfig['Platform Modernization'];
         const Icon = config.icon;
-        const isWide = idx === 4; // 5th card spans full width on md+ for balanced 2-column grid
+        const isWide = idx === engineeringImpacts.length - 1 && engineeringImpacts.length % 2 !== 0;
 
         return (
           <article

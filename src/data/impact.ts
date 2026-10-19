@@ -12,7 +12,7 @@ export interface EngineeringImpactItem {
 export const platformContext = {
   platformName: "CCH SureTax Enterprise Platform",
   company: "Wolters Kluwer",
-  role: "Senior Software Engineer (Technical Lead)",
+  role: "Senior Software Engineer",
   summary:
     "My core enterprise engineering work centers on backend services supporting high-volume US and Canadian tax calculation engines. These mission-critical systems integrate complex multi-state business location rules, nexus determination algorithms, and exemption-certificate validation logic under strict performance and accuracy requirements.",
 };
@@ -26,7 +26,7 @@ export const engineeringImpacts: EngineeringImpactItem[] = [
     challenge:
       "Core tax calculation and transaction services ran on legacy .NET Framework components, creating technical debt, limiting testability, and constraining CI/CD automation and container adoption.",
     solution:
-      "Led the phased migration of critical service components from .NET Framework to modern .NET Core. Restructured service boundaries around domain responsibilities, decoupled database dependencies using clean interfaces, standardized OpenAPI specifications, and eliminated deprecated APIs.",
+      "Drove the phased migration of critical service components from .NET Framework to modern .NET Core. Restructured service boundaries around domain responsibilities, decoupled database dependencies using clean interfaces, standardized OpenAPI specifications, and eliminated deprecated APIs.",
     outcomes: [
       "Streamlined testing workflows and reduced maintenance overhead across core backend services.",
       "Established modular, service-oriented architecture enabling containerized cloud deployments on Kubernetes (AKS).",
@@ -83,19 +83,83 @@ export const engineeringImpacts: EngineeringImpactItem[] = [
     technologies: ["Azure Service Bus", "Azure Key Vault", "Managed Identities", "Redis Caching", "SQL Profiling", "Diagnostics"],
   },
   {
-    id: "enterprise-ai-workflow",
-    title: "Enterprise AI Workflow Integration",
-    tagline: "Contributing to the integration of Wolters Kluwer's FAB Agent framework into the Credit Carry Forward workflow.",
+    id: "sku-product-mapping",
+    title: "AI-Powered SKU-to-Product Mapping",
+    tagline: "Contributed to an AI-powered classification solution mapping customer SKUs to product categories using RAG.",
     category: "Enterprise AI",
     challenge:
-      "Integrating emerging autonomous AI agent capabilities into high-compliance tax workflows while upholding strict enterprise security standards, regulatory auditability, and execution traceability.",
+      "Customer transaction payloads frequently contain non-standardized, ambiguous SKU descriptions that require accurate mapping to standardized Product Group and Product Item categories for tax determination.",
     solution:
-      "Contributing to the architecture and implementation of Wolters Kluwer's FAB (Foundation & Beyond) Agent framework integrated into the Credit Carry Forward workflow. Developing API integration contracts, context hydration pipelines, and guarded prompt boundaries that maintain complete audit trails for every automated decision.",
+      "Contributed to an AI-powered classification solution integrating a FAB-hosted RAG agent. Implemented prompt engineering and context hydration from reference catalog knowledge, structured output parsing, confidence-scoring logic with alternative recommendations, and asynchronous processing using Azure Service Bus and Blob Storage with Key Vault security.",
     outcomes: [
-      "Enabled secure, auditable AI-assisted automation within existing enterprise tax processing pipelines.",
-      "Applied Spec-Driven Development practices ensuring implementation consistency and architectural compliance.",
-      "Maintained zero-compromise security posture by keeping AI agent actions verifiable and fully traceable.",
+      "Supported automated SKU classification generating structured outputs with confidence scores and explainable rationale.",
+      "Provided alternative category recommendations when classification confidence fell below automated thresholds.",
+      "Integrated decoupled asynchronous request processing via Azure Service Bus to support enterprise transaction batches.",
     ],
-    technologies: ["FAB Agent Framework", "Spec-Driven Development", "OpenSpec", "SpecKit", "GitHub Copilot", "OpenAPI", "C#"],
+    technologies: [
+      "C#",
+      ".NET",
+      "RAG",
+      "LLM Integration",
+      "Prompt Engineering",
+      "Azure Service Bus",
+      "Azure Blob Storage",
+      "Azure Key Vault",
+      "Structured Outputs",
+    ],
+  },
+  {
+    id: "agentic-tax-filing",
+    title: "Agentic Tax Returns Filing Platform",
+    tagline: "Contributed to an AI-assisted tax-filing platform combining browser automation, document extraction, and approval checkpoints.",
+    category: "Enterprise AI",
+    challenge:
+      "Automating enterprise tax returns across diverse state portals requires navigating varied web form layouts, extracting structured figures from reporting PDFs, and maintaining strict regulatory compliance with human oversight.",
+    solution:
+      "Contributed to an AI-assisted filing platform that combines LLM-driven browser automation using Stagehand and Playwright with backend workflow services. Assisted in implementing PDF-to-structured-JSON extraction and schema validation, configurable state-specific workflows, automated verification against transaction records, and human-in-the-loop approval checkpoints with pause/resume capabilities.",
+    outcomes: [
+      "Contributed to browser automation workflows navigating multi-step state tax portal forms with pre-submission validation.",
+      "Implemented PDF-to-structured-JSON extraction pipelines transforming return documents into verified payload schemas.",
+      "Incorporated human-in-the-loop checkpoints enabling compliance reviewers to inspect, pause, approve, or resume filings.",
+    ],
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Stagehand",
+      "Playwright",
+      "LLM Tool Calling",
+      "C#",
+      ".NET",
+      "Azure Service Bus",
+      "Azure Blob Storage",
+      "Azure Key Vault",
+    ],
+  },
+  {
+    id: "dor-extractor",
+    title: "AI DOR Extractor — Prototype to Product",
+    tagline: "Initiated an experimental AI prototype for extracting state tax notices, later handed over for productionization.",
+    category: "Enterprise AI",
+    challenge:
+      "Monitoring frequent tax rate changes, legislative updates, and regulatory notices across multiple state Department of Revenue (DOR) websites was manual and resource-intensive.",
+    solution:
+      "Initiated and developed an experimental AI-assisted prototype to automate the discovery and extraction of state DOR updates. Built scheduled collection using Playwright and Quartz.NET in C#/.NET, applied FAB prompt-only and RAG agents to transform unstructured web text into structured tax-change data, and integrated Azure Service Bus, Blob Storage, and SQL Server for resilient event buffering. Following successful proof-of-concept validation, the prototype evolved into a formal product feature and was handed over to another team for full productionization.",
+    outcomes: [
+      "Demonstrated automated scheduled scraping and LLM-assisted extraction of regulatory tax notices from state DOR portals.",
+      "Structured and enriched raw web content into normalized tax-change records using prompt-only and RAG agents.",
+      "Delivered a validated prototype that advanced to product feature status and was successfully handed over to a dedicated team for production delivery.",
+    ],
+    technologies: [
+      "C#",
+      ".NET",
+      "Playwright",
+      "Quartz.NET",
+      "FAB Agents",
+      "RAG",
+      "Azure Service Bus",
+      "Azure Blob Storage",
+      "SQL Server",
+      "Azure Key Vault",
+    ],
   },
 ];

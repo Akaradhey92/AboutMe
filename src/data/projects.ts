@@ -32,18 +32,19 @@ export const projects: Project[] = [
     description:
       "A hands-on implementation project exploring enterprise search and knowledge retrieval. Rather than relying on simple prompt stuffing, this project builds a deterministic pipeline that extracts text from structured and unstructured documents, calculates token-aware embeddings, stores vectors in a local/hosted index, and synthesizes grounded answers with verifiable source citations.",
     technologies: [
-      "Python",
-      "LangChain / LlamaIndex",
-      "ChromaDB / Qdrant",
-      "OpenAI / Anthropic APIs",
-      "Sentence-Transformers",
-      "FastAPI",
+      "C#",
+      ".NET",
+      "Semantic Kernel",
+      "Azure OpenAI",
+      "Vector Embeddings",
+      "Qdrant / Vector Store",
+      "REST APIs",
     ],
     keyDecisions: [
       "Recursive chunking with token overlap to maintain contextual continuity across paragraph boundaries.",
-      "Hybrid search strategy combining dense semantic vector embeddings with sparse BM25 keyword matching for domain-specific terminology.",
+      "Hybrid search strategy combining dense semantic vector embeddings with keyword matching for domain-specific terminology.",
       "Strict context grounding: System prompt constraints explicitly instruct the model to cite retrieved passages and decline to answer when information is absent.",
-      "Local experimentation first: Designed with open-source local embedding models (e.g., all-MiniLM-L6-v2) before delegating to commercial LLM APIs.",
+      "Deterministic benchmarks: Evaluating retrieval precision and citation accuracy before delegating to LLM synthesis.",
     ],
     architectureOverview:
       "Document ingestion pipeline reads source files (PDF, Markdown), splits them into normalized chunks with metadata, generates vector embeddings, and queries a vector store during user interaction before passing top-k documents to the LLM context window.",

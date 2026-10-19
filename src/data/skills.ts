@@ -81,16 +81,16 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "ai-engineering",
     title: "Enterprise AI & Modernization",
-    badge: "Enterprise AI & Exploration",
-    isLearning: true,
+    badge: "Applied Enterprise AI",
+    isLearning: false,
     summary:
-      "Actively driving enterprise AI capabilities within CCH SureTax using Spec-Driven Development, RAG pipelines, and agent integration.",
+      "Contributing to enterprise AI initiatives within CCH SureTax, including RAG-based SKU classification, agentic tax return filing automation, and structured DOR web extraction.",
     skills: [
-      { name: "Spec-Driven Development", context: "OpenSpec, SpecKit, OpenAPI contract-first workflows" },
-      { name: "Enterprise AI Integration", context: "Foundation & Beyond Agent workflows within enterprise platforms" },
-      { name: "Retrieval-Augmented Generation (RAG)", context: "Document ingestion, embeddings, semantic retrieval, indexes" },
+      { name: "RAG & LLM Integration", context: "FAB-hosted RAG agents, prompt engineering, confidence-based classification" },
+      { name: "Agentic Browser Automation", context: "Stagehand, Playwright, LLM tool calling, human-in-the-loop workflows" },
+      { name: "Structured Data Extraction", context: "PDF-to-JSON parsing, web scraping with Quartz.NET, schema validation" },
+      { name: "Spec-Driven Workflows", context: "OpenSpec, SpecKit, and contract-first API design" },
       { name: "GitHub Copilot Integration", context: "Augmenting engineering workflows with disciplined AI tooling" },
-      { name: "Python & LLM Pipelines", context: "Prototyping knowledge retrieval and grounded assistant workflows" },
     ],
   },
 ];

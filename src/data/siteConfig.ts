@@ -36,17 +36,17 @@ export const siteConfig: SiteConfig = {
   title: "Senior Software Engineer | Enterprise Platform Engineering",
   tagline: "Building Reliable Software. Engineering Scalable Systems.",
   shortBio:
-    "Senior Software Engineer with 12+ years of experience building, modernizing, and supporting enterprise software platforms across C#, .NET, Microsoft Azure, Kubernetes, SQL Server, and Angular. Technical lead for strategic cloud modernization and enterprise AI initiatives within the CCH SureTax platform at Wolters Kluwer.",
+    "Senior Software Engineer with 12+ years of experience building, modernizing, and supporting enterprise software platforms across C#, .NET, Microsoft Azure, Kubernetes, SQL Server, and Angular. Focused on backend engineering, cloud modernization, and enterprise integrations within the CCH SureTax platform at Wolters Kluwer.",
   location: "Pune, India",
   phone: "+91-8817381752",
   currentCompany: "Wolters Kluwer",
-  currentRole: "Senior Software Engineer (Tech Lead)",
+  currentRole: "Senior Software Engineer",
   experienceYears: "12+",
   highlights: [
     "12+ Years Enterprise .NET & C#",
     "Microsoft Azure & Kubernetes (AKS)",
     "CI/CD Modernization (GitHub & Azure DevOps)",
-    "Enterprise AI & Spec-Driven Development",
+    "Applied AI & Modern Workflows",
   ],
   social: {
     github: "https://github.com/akaradhey",
