@@ -1,0 +1,80 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import { withBase } from '../utils/url';
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-astro';
+
+const currentYear = new Date().getFullYear();
+const homeUrl = withBase('/');
+---
+
+<footer class="border-t border-slate-800/80 bg-navy-950 py-12 text-slate-400">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Wordmark & Dynamic Year -->
+      <div class="flex flex-col items-center md:items-start space-y-1">
+        <a 
+          href={homeUrl} 
+          class="text-white font-bold text-base hover:text-cyan-400 transition-colors flex items-center space-x-2"
+        >
+          <span class="w-6 h-6 rounded bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white font-mono font-bold text-xs">
+            A
+          </span>
+          <span>{siteConfig.name}</span>
+        </a>
+        <p class="text-xs text-slate-300 font-mono">
+          © {currentYear} {siteConfig.name}. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Understated Engineering Sign-off -->
+      <div class="text-center md:text-left">
+        <p class="text-xs font-mono text-slate-300 tracking-wide">
+          Engineered with precision, built for scale.
+        </p>
+      </div>
+
+      <!-- Social Icons & Back to top -->
+      <div class="flex items-center space-x-4">
+        <a
+          href={siteConfig.social.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-slate-400 hover:text-white hover:bg-slate-850 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400"
+          aria-label="GitHub Profile"
+        >
+          <Github class="w-4 h-4" />
+        </a>
+
+        <a
+          href={siteConfig.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-slate-400 hover:text-white hover:bg-slate-850 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400"
+          aria-label="LinkedIn Profile"
+        >
+          <Linkedin class="w-4 h-4" />
+        </a>
+
+        <a
+          href={`mailto:${siteConfig.social.email}`}
+          class="p-2 text-slate-400 hover:text-white hover:bg-slate-850 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400"
+          aria-label="Email"
+        >
+          <Mail class="w-4 h-4" />
+        </a>
+
+        <a
+          href="#main-content"
+          class="p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-850 rounded-lg transition-colors ml-2 border border-slate-800"
+          aria-label="Back to top"
+          title="Back to top"
+        >
+          <ArrowUp class="w-4 h-4" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+

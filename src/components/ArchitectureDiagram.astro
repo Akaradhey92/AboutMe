@@ -1,0 +1,125 @@
+---
+// Minimalist, high-credibility technical system topology diagram
+---
+
+<div class="relative w-full max-w-lg mx-auto p-4 sm:p-6 rounded-xl bg-navy-900/70 border border-slate-800/90 shadow-2xl backdrop-blur-sm">
+  <!-- Window Header / Frame -->
+  <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800/80">
+    <div class="flex items-center space-x-2">
+      <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+      <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+      <div class="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+      <span class="text-[11px] font-mono text-slate-400 pl-2">system.architecture.topology</span>
+    </div>
+    <div class="flex items-center space-x-1.5">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="text-[10px] font-mono text-emerald-400/90 uppercase tracking-wider">healthy</span>
+    </div>
+  </div>
+
+  <!-- SVG Architecture Flow -->
+  <svg
+    viewBox="0 0 460 300"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-full h-auto text-slate-300"
+    role="img"
+    aria-label="Software architecture diagram showing client requests routed to ASP.NET Core APIs, Azure Service Bus messaging, SQL persistence, and AI vector retrieval"
+  >
+    <defs>
+      <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2" />
+        <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.2" />
+      </linearGradient>
+      <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+
+    <!-- Connector Paths with flow arrows -->
+    <!-- Client to API Gateway -->
+    <path d="M 90 85 L 160 85" stroke="#334155" stroke-width="2" stroke-dasharray="3 3" />
+    <path d="M 120 85 L 126 82 M 120 85 L 126 88" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+
+    <!-- API to Message Bus -->
+    <path d="M 270 85 L 340 85" stroke="#334155" stroke-width="2" />
+    <path d="M 305 85 L 311 82 M 305 85 L 311 88" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+
+    <!-- API to SQL Persistence -->
+    <path d="M 215 118 L 215 180" stroke="#334155" stroke-width="2" />
+    <path d="M 215 150 L 212 144 M 215 150 L 218 144" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Bus to Background Workers -->
+    <path d="M 390 118 L 390 180" stroke="#334155" stroke-width="2" stroke-dasharray="3 3" />
+    <path d="M 390 150 L 387 144 M 390 150 L 393 144" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Workers to AI / Vector Store -->
+    <path d="M 340 215 L 280 215" stroke="#334155" stroke-width="2" />
+    <path d="M 310 215 L 316 212 M 310 215 L 316 218" stroke="#a855f7" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Ingress Node -->
+    <g transform="translate(20, 55)">
+      <rect width="70" height="60" rx="8" fill="#0b1329" stroke="#1e293b" stroke-width="1.5" />
+      <text x="35" y="28" fill="#94a3b8" font-size="10" font-family="monospace" text-anchor="middle" font-weight="600">CLIENTS</text>
+      <text x="35" y="44" fill="#64748b" font-size="9" font-family="monospace" text-anchor="middle">HTTPS/REST</text>
+    </g>
+
+    <!-- Core API Tier (.NET / ASP.NET Core) -->
+    <g transform="translate(160, 52)">
+      <rect width="110" height="66" rx="8" fill="#0e172e" stroke="#0284c7" stroke-width="1.5" class="hover:stroke-cyan-400 transition-colors" />
+      <rect x="8" y="8" width="6" height="6" rx="3" fill="#38bdf8" />
+      <text x="20" y="15" fill="#38bdf8" font-size="9" font-family="monospace" font-weight="600">ASP.NET CORE</text>
+      <text x="55" y="38" fill="#f8fafc" font-size="12" font-family="sans-serif" font-weight="700" text-anchor="middle">Web API Tier</text>
+      <text x="55" y="52" fill="#94a3b8" font-size="9" font-family="monospace" text-anchor="middle">Auth / MediatR / DI</text>
+    </g>
+
+    <!-- Azure Service Bus Node -->
+    <g transform="translate(340, 55)">
+      <rect width="100" height="60" rx="8" fill="#0b1329" stroke="#1e293b" stroke-width="1.5" />
+      <text x="50" y="26" fill="#38bdf8" font-size="10" font-family="monospace" text-anchor="middle" font-weight="600">SERVICE BUS</text>
+      <text x="50" y="42" fill="#94a3b8" font-size="9" font-family="monospace" text-anchor="middle">Async Queues</text>
+    </g>
+
+    <!-- Data Persistence Tier -->
+    <g transform="translate(155, 180)">
+      <rect width="120" height="66" rx="8" fill="#0b1329" stroke="#1e293b" stroke-width="1.5" />
+      <rect x="8" y="8" width="6" height="6" rx="3" fill="#0ea5e9" />
+      <text x="20" y="15" fill="#0ea5e9" font-size="9" font-family="monospace" font-weight="600">SQL SERVER</text>
+      <text x="60" y="38" fill="#f8fafc" font-size="12" font-family="sans-serif" font-weight="600" text-anchor="middle">Data & Storage</text>
+      <text x="60" y="52" fill="#64748b" font-size="9" font-family="monospace" text-anchor="middle">ACID / EF Core / Blob</text>
+    </g>
+
+    <!-- Workers & AI / RAG Engine -->
+    <g transform="translate(340, 180)">
+      <rect width="100" height="66" rx="8" fill="#130e2e" stroke="#8b5cf6" stroke-width="1.5" />
+      <rect x="8" y="8" width="6" height="6" rx="3" fill="#c084fc" />
+      <text x="20" y="15" fill="#c084fc" font-size="9" font-family="monospace" font-weight="600">AI / RAG LAB</text>
+      <text x="50" y="38" fill="#f8fafc" font-size="12" font-family="sans-serif" font-weight="600" text-anchor="middle">Python LLM</text>
+      <text x="50" y="52" fill="#a78bfa" font-size="9" font-family="monospace" text-anchor="middle">Vector Ingestion</text>
+    </g>
+
+    <!-- Latency & Protocol Telemetry Labels -->
+    <text x="215" y="275" fill="#64748b" font-size="9" font-family="monospace" text-anchor="middle">
+      Enterprise Scalability • High Availability • Cloud Architecture
+    </text>
+  </svg>
+
+  <!-- Metric Badges footer -->
+  <div class="grid grid-cols-3 gap-2 pt-3 mt-2 border-t border-slate-800/60 text-center font-mono text-[11px]">
+    <div class="p-1.5 rounded bg-slate-900/80 border border-slate-800/80">
+      <span class="text-slate-400 block text-[9px] uppercase">Experience</span>
+      <span class="text-cyan-400 font-semibold">12+ Years</span>
+    </div>
+    <div class="p-1.5 rounded bg-slate-900/80 border border-slate-800/80">
+      <span class="text-slate-400 block text-[9px] uppercase">Stack Focus</span>
+      <span class="text-blue-400 font-semibold">.NET & Azure</span>
+    </div>
+    <div class="p-1.5 rounded bg-slate-900/80 border border-slate-800/80">
+      <span class="text-slate-400 block text-[9px] uppercase">Frontier</span>
+      <span class="text-purple-400 font-semibold">AI & RAG</span>
+    </div>
+  </div>
+</div>
+

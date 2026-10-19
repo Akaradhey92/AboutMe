@@ -1,0 +1,44 @@
+---
+import { projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+import { Info } from 'lucide-astro';
+---
+
+<section id="projects" class="py-20 border-t border-slate-800/80 bg-[#060911] relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="max-w-3xl text-left">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-4">
+          <span>02 // FEATURED PROJECTS & REFERENCE ARCHITECTURES</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Systems Engineering & Technical Implementations
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          Tangible implementations and architectural reference designs focusing on cloud-native backend services, clean architecture, resilient infrastructure, and applied AI systems.
+        </p>
+      </div>
+
+      <!-- Authenticity Disclaimer / Notice -->
+      <div class="p-4 rounded-xl bg-navy-900/60 border border-slate-800/80 max-w-sm text-left">
+        <div class="flex items-center space-x-2 text-xs font-mono text-cyan-400 mb-1">
+          <Info class="w-3.5 h-3.5 flex-shrink-0" />
+          <span class="font-semibold uppercase">Transparency Standard</span>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Projects are honestly categorized as <span class="text-cyan-300 font-semibold">In Progress</span> or <span class="text-amber-300 font-semibold">Planned</span>. No fabricated links, metrics, or false completion claims.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+
+  </div>
+</section>

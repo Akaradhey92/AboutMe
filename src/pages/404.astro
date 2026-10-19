@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
+import { Terminal, Home } from 'lucide-astro';
+
+const homeUrl = withBase('/');
+---
+
+<BaseLayout
+  title="404 - Page Not Found | Personal Engineering Portfolio"
+  description="The requested route does not exist on this portfolio server."
+>
+  <div class="min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+    <div class="max-w-md w-full text-center space-y-6 p-8 rounded-2xl bg-navy-900/60 border border-slate-800 shadow-2xl">
+      
+      <!-- Terminal status pill -->
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono">
+        <Terminal class="w-3.5 h-3.5" />
+        <span>HTTP STATUS 404</span>
+      </div>
+
+      <div class="space-y-2">
+        <h1 class="text-6xl font-black font-mono text-white tracking-tighter">
+          404
+        </h1>
+        <h2 class="text-xl font-bold text-slate-200">
+          Route Not Found
+        </h2>
+      </div>
+
+      <p class="text-sm text-slate-300 leading-relaxed font-mono">
+        The requested resource path could not be resolved. If you entered a URL directly or followed an outdated link, please navigate back to the main engineering portfolio.
+      </p>
+
+      <div class="pt-4 flex justify-center">
+        <a
+          href={homeUrl}
+          class="inline-flex items-center space-x-2 px-6 py-3 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-all shadow-md focus-visible:ring-2 focus-visible:ring-cyan-300"
+        >
+          <Home class="w-4 h-4" />
+          <span>Return to Portfolio Home</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

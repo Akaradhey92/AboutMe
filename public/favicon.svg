@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#060911" />
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#1e293b" stroke-width="4" />
+  <!-- Stylized Architecture / Code Letter A -->
+  <path d="M 64 28 L 34 98 L 49 98 L 57 78 L 71 78 L 79 98 L 94 98 Z M 64 54 L 68 67 L 60 67 Z" fill="url(#favGrad)" />
+  <!-- Subtle accent dot -->
+  <circle cx="64" cy="40" r="4" fill="#38bdf8" />
+</svg>
+

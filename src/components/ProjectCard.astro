@@ -1,0 +1,141 @@
+---
+import type { Project } from '../data/projects';
+import { withBase } from '../utils/url';
+import { ExternalLink, Github, ArrowRight, Clock, Layers } from 'lucide-astro';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const caseStudyUrl = withBase(`/projects/${project.slug}/`);
+
+const statusStyles = {
+  'In Progress': 'bg-cyan-950/80 text-cyan-300 border-cyan-700/70',
+  'Planned': 'bg-amber-950/80 text-amber-300 border-amber-800/70',
+  'Completed': 'bg-emerald-950/80 text-emerald-300 border-emerald-700/70',
+};
+---
+
+<article class="flex flex-col justify-between rounded-xl bg-navy-900/60 border border-slate-800/90 hover:border-slate-700 hover:bg-navy-850/60 p-6 sm:p-7 transition-all duration-200 group">
+  <div class="space-y-4">
+    
+    <!-- Top Metadata: Category & Status Badge -->
+    <div class="flex items-center justify-between gap-2 flex-wrap">
+      <span class="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+        <Layers class="w-3.5 h-3.5 text-cyan-400" />
+        <span>{project.category}</span>
+      </span>
+
+      <span class={`text-[11px] font-mono px-2.5 py-0.5 rounded-full border font-medium flex items-center gap-1.5 ${statusStyles[project.status]}`}>
+        {project.status === 'In Progress' && <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>}
+        {project.status === 'Planned' && <Clock class="w-3 h-3 text-amber-400" />}
+        <span>{project.status}</span>
+      </span>
+    </div>
+
+    <!-- Title linked to Case Study -->
+    <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
+      <a href={caseStudyUrl} class="focus-visible:ring-2 focus-visible:ring-cyan-400 rounded">
+        {project.title}
+      </a>
+    </h3>
+
+    <!-- Problem & Solution Scannable Stack -->
+    <div class="space-y-3 pt-1">
+      <div>
+        <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-400 block mb-1">
+          The Problem
+        </span>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          {project.problemStatement}
+        </p>
+      </div>
+
+      <div>
+        <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-cyan-400 block mb-1">
+          Solution & Architecture
+        </span>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          {project.summary}
+        </p>
+      </div>
+    </div>
+
+    <!-- Key Technical Decisions: Clean bullet list without box-in-a-box border -->
+    <div class="pt-2 border-t border-slate-800/60">
+      <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-400 block mb-2">
+        Key Architectural Decisions
+      </span>
+      <ul class="space-y-1.5">
+        {project.keyDecisions.slice(0, 2).map((decision) => (
+          <li class="text-xs text-slate-300 flex items-start space-x-2 leading-relaxed">
+            <span class="text-cyan-400 font-mono mt-0.5">•</span>
+            <span>{decision}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Technologies Used Tags -->
+    <div class="pt-2">
+      <div class="flex flex-wrap gap-1.5">
+        {project.technologies.map((tech) => (
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700/60">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Card Action Footer -->
+  <div class="pt-5 mt-6 border-t border-slate-800/80 flex items-center justify-between gap-4">
+    <!-- Case Study Link -->
+    <a
+      href={caseStudyUrl}
+      class="inline-flex items-center space-x-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-400 rounded transition-colors group/link"
+    >
+      <span>Read Architecture Details</span>
+      <ArrowRight class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+    </a>
+
+    <!-- Source / Demo Links -->
+    <div class="flex items-center space-x-3 text-xs font-mono">
+      {project.repoUrl ? (
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center space-x-1 text-slate-300 hover:text-white transition-colors"
+          title="View GitHub Repository"
+        >
+          <Github class="w-4 h-4" />
+          <span class="hidden sm:inline">Repo</span>
+        </a>
+      ) : (
+        <span
+          class="flex items-center space-x-1 text-slate-400 cursor-help"
+          title="Repository in active development; link will be added upon initial release"
+        >
+          <Github class="w-4 h-4 opacity-60" />
+          <span class="text-[11px] hidden sm:inline">Repo Pending</span>
+        </span>
+      )}
+
+      {project.demoUrl ? (
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center space-x-1 text-slate-300 hover:text-cyan-400 transition-colors"
+          title="View Live Demo"
+        >
+          <ExternalLink class="w-4 h-4" />
+          <span class="hidden sm:inline">Demo</span>
+        </a>
+      ) : null}
+    </div>
+  </div>
+</article>

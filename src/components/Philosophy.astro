@@ -1,0 +1,77 @@
+---
+import { engineeringPrinciples } from '../data/philosophy';
+import { Layers, ShieldCheck, Workflow, Check } from 'lucide-astro';
+
+const icons = [Layers, ShieldCheck, Workflow];
+---
+
+<section id="philosophy" class="py-16 sm:py-20 border-t border-slate-800/80 bg-navy-950/40 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header with correct 04 numbering -->
+    <div class="max-w-3xl mb-12 text-left">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-4">
+        <span>04 // ENGINEERING PHILOSOPHY</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        How I Approach Engineering & Architecture
+      </h2>
+      <p class="mt-3.5 text-base sm:text-lg text-slate-300 leading-relaxed">
+        Three core principles refined over twelve years in enterprise production. Direct, pragmatic, and focused on building software systems that remain reliable over the long term.
+      </p>
+    </div>
+
+    <!-- 3-Column Principles Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {engineeringPrinciples.map((item, index) => {
+        const Icon = icons[index % icons.length];
+        return (
+          <div class="rounded-xl bg-navy-900/60 border border-slate-800/90 hover:border-slate-700 hover:bg-navy-850/60 p-6 sm:p-7 flex flex-col justify-between transition-all duration-200">
+            <div>
+              <!-- Principle Number & Icon -->
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-bold text-cyan-400 tracking-wider">
+                  PRINCIPLE // {item.number}
+                </span>
+                <div class="w-8 h-8 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300">
+                  <Icon class="w-4 h-4" />
+                </div>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white mb-2 tracking-tight">
+                {item.title}
+              </h3>
+
+              <!-- Quote / Thesis -->
+              <p class="text-xs font-mono text-cyan-300/90 italic mb-4 pb-3 border-b border-slate-800/70">
+                "{item.quote}"
+              </p>
+
+              <!-- Description -->
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                {item.description}
+              </p>
+            </div>
+
+            <!-- Practical Focus Areas: Clean list without tag pill clutter -->
+            <div class="pt-4 border-t border-slate-800/80 space-y-2">
+              <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-400 block mb-1">
+                Practical Application
+              </span>
+              <ul class="space-y-1.5">
+                {item.keyPractices.map((practice) => (
+                  <li class="text-xs text-slate-300 flex items-start space-x-2 leading-relaxed">
+                    <Check class="w-3.5 h-3.5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span>{practice}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,121 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2050 >>
+stream
+BT
+/F1 18 Tf
+50 740 Td
+(ANKIT ARADHEY) Tj
+/F2 9 Tf
+0 -16 Td
+(Senior Software Engineer | Enterprise Platform Engineering | .NET * Azure * AI | Pune, India) Tj
+0 -12 Td
+(Phone: +91-8817381752 | Email: akaradhey92@gmail.com | LinkedIn: https://www.linkedin.com/in/ankit-kumar-aradhey) Tj
+
+/F1 12 Tf
+0 -24 Td
+(PROFESSIONAL SUMMARY) Tj
+/F2 8.5 Tf
+0 -14 Td
+(Senior Software Engineer with 12+ years of experience building, modernizing, and supporting enterprise software) Tj
+0 -11 Td
+(platforms using C#, .NET, Azure, Kubernetes, SQL Server, and Angular. Act as technical lead for strategic initiatives) Tj
+0 -11 Td
+(within the CCH SureTax platform, driving solution design, cloud modernization, and architecture documentation while) Tj
+0 -11 Td
+(collaborating closely with software architects and mentoring developers. Currently contributing to enterprise AI) Tj
+0 -11 Td
+(initiatives developing AI capabilities using Spec-Driven Development with OpenSpec, SpecKit, GitHub Copilot, and OpenAPI.) Tj
+
+/F1 12 Tf
+0 -20 Td
+(TECHNICAL SKILLS) Tj
+/F2 8.5 Tf
+0 -13 Td
+(Languages: C#, SQL, JavaScript, TypeScript) Tj
+0 -11 Td
+(Frameworks: .NET Core, .NET Framework, ASP.NET MVC, ASP.NET Web API, Entity Framework, WCF, Angular) Tj
+0 -11 Td
+(Cloud & DevOps: Microsoft Azure (App Services, Azure Functions, Service Bus, Blob Storage, Key Vault), Docker, AKS, CI/CD) Tj
+0 -11 Td
+(Databases & Cache: Microsoft SQL Server (Stored Procedures, Indexing, Execution Plans, Tuning), Redis) Tj
+0 -11 Td
+(Security & Auth: OAuth2, OpenID Connect (OIDC), JWT, Single Sign-On (SSO), Azure Key Vault) Tj
+0 -11 Td
+(Enterprise AI: GitHub Copilot, Spec-Driven Development, OpenSpec, SpecKit, Enterprise Agent Integration, RAG) Tj
+
+/F1 12 Tf
+0 -20 Td
+(PROFESSIONAL EXPERIENCE) Tj
+/F1 10 Tf
+0 -14 Td
+(Senior Software Engineer (Tech Lead) - Wolters Kluwer | Pune, India) Tj
+/F2 8.5 Tf
+0 -11 Td
+(Jul 2018 - Present | CCH SureTax Enterprise Platform) Tj
+0 -11 Td
+(* Design, develop, and modernize enterprise backend services using C#, .NET, SQL Server, Azure, and Angular.) Tj
+0 -11 Td
+(* Led modernization of critical applications from .NET Framework to .NET Core, improving long-term maintainability.) Tj
+0 -11 Td
+(* Designed and implemented cloud-native solutions using Microsoft Azure, Docker, Kubernetes (AKS), and Azure DevOps.) Tj
+0 -11 Td
+(* Built secure, high-throughput REST APIs and improved latency via Redis caching and SQL execution plan optimization.) Tj
+0 -11 Td
+(* Contribute to enterprise AI initiatives designing AI capabilities using Spec-Driven Development with OpenSpec and Copilot.) Tj
+0 -11 Td
+(* Implement enterprise security and authentication using OAuth2, OpenID Connect (OIDC), JWT, and Azure Key Vault.) Tj
+
+/F1 10 Tf
+0 -16 Td
+(Software Engineer - Cybage Software Pvt Ltd | Pune, India) Tj
+/F2 8.5 Tf
+0 -11 Td
+(Sep 2014 - Jun 2018) Tj
+0 -11 Td
+(* Developed enterprise web applications using ASP.NET MVC, ASP.NET Web API, AngularJS, and Microsoft Azure.) Tj
+0 -11 Td
+(* Designed relational schemas, stored procedures, and data layers using Microsoft SQL Server and Entity Framework.) Tj
+0 -11 Td
+(* Supported Azure deployments, production environments, and continuous improvement initiatives in an Agile model.) Tj
+
+/F1 12 Tf
+0 -20 Td
+(EDUCATION) Tj
+/F2 8.5 Tf
+0 -13 Td
+(* Post Graduate Diploma in Advanced Computing (PG-DAC) | CDAC ACTS, Pune (2014)) Tj
+0 -11 Td
+(* Bachelor of Engineering - Electronics & Telecommunication | S.S.E.C, Bhilai (2013)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000244 00000 n 
+0000002346 00000 n 
+0000002423 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2495
+%%EOF

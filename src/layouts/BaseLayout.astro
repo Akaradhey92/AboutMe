@@ -1,0 +1,109 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import { withBase } from '../utils/url';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = siteConfig.meta.title,
+  description = siteConfig.meta.description,
+  ogImage = siteConfig.meta.ogImage,
+  canonicalUrl = siteConfig.meta.siteUrl,
+} = Astro.props;
+
+const resolvedOgImage = withBase(ogImage);
+const faviconUrl = withBase('/favicon.svg');
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={siteConfig.name} />
+    <meta name="theme-color" content="#060911" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={resolvedOgImage} />
+
+    <!-- Fonts preconnect (system fonts prioritized for instant rendering and privacy) -->
+    <meta name="robots" content="index, follow" />
+  </head>
+  <body class="bg-[#060911] text-slate-200 antialiased selection:bg-cyan-500/20 selection:text-cyan-300 min-h-screen flex flex-col relative overflow-x-hidden">
+    <!-- Accessible Skip to main content link -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded focus:outline-none focus:ring-2 focus:ring-white"
+    >
+      Skip to main content
+    </a>
+
+    <!-- Subtle ambient background gradients for depth (non-distracting, hardware accelerated) -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-cyan-900/10 blur-[130px] rounded-full"></div>
+      <div class="absolute top-[40%] right-[-10%] w-[600px] h-[600px] bg-blue-900/5 blur-[150px] rounded-full"></div>
+      <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-slate-800/10 blur-[150px] rounded-full"></div>
+    </div>
+
+    <Navbar />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Intersection observer for subtle entrance animations -->
+    <script>
+      const observerCallback: IntersectionObserverCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-4');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1,
+      });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
+
