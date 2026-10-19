@@ -4,7 +4,7 @@ import { withBase } from '../utils/url';
 import ArchitectureDiagram from './ArchitectureDiagram.astro';
 import { ArrowRight, Mail, Sparkles, MapPin, Briefcase, FileText, CheckCircle2 } from 'lucide-astro';
 
-const projectsUrl = withBase('/#projects');
+const impactUrl = withBase('/#impact');
 const contactUrl = withBase('/#contact');
 const resumeUrl = withBase(siteConfig.social.resumePdf);
 ---
@@ -51,25 +51,25 @@ const resumeUrl = withBase(siteConfig.social.resumePdf);
           </div>
           <div class="flex items-center space-x-2 text-sm text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-cyan-400 flex-shrink-0" />
-            <span class="font-medium">Microsoft Azure Cloud Architecture</span>
+            <span class="font-medium">Microsoft Azure & Kubernetes (AKS)</span>
           </div>
           <div class="flex items-center space-x-2 text-sm text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-cyan-400 flex-shrink-0" />
-            <span class="font-medium">High-Throughput APIs & Distributed Data</span>
+            <span class="font-medium">CI/CD (GitHub Actions & Azure DevOps)</span>
           </div>
           <div class="flex items-center space-x-2 text-sm text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-purple-400 flex-shrink-0" />
-            <span class="font-medium">Exploring Applied AI & RAG Systems</span>
+            <span class="font-medium">Enterprise AI & Spec-Driven Delivery</span>
           </div>
         </div>
 
         <!-- Action CTAs: Work, Contact & Resume -->
         <div class="pt-3 flex flex-wrap items-center gap-3.5">
           <a
-            href={projectsUrl}
+            href={impactUrl}
             class="inline-flex items-center space-x-2 px-5 py-2.5 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-all shadow-md hover:shadow-cyan-500/25 focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
-            <span>Explore My Work</span>
+            <span>Explore Engineering Impact</span>
             <ArrowRight class="w-4 h-4" />
           </a>
 

@@ -5,10 +5,15 @@ export interface ExperienceItem {
   location: string;
   period: string;
   isCurrent: boolean;
-  isPlaceholder?: boolean;
   platform?: string;
   summary: string;
   responsibilities: string[];
+  podPractices?: {
+    badge: string;
+    title: string;
+    description: string;
+    points: string[];
+  };
   technologies: string[];
 }
 
@@ -27,20 +32,28 @@ export const experiences: ExperienceItem[] = [
     location: "Pune, India",
     period: "Jul 2018 – Present",
     isCurrent: true,
-    isPlaceholder: false,
     platform: "CCH SureTax Platform",
     summary:
-      "Act as technical lead for strategic product initiatives within the CCH SureTax enterprise platform, driving solution design, cloud modernization, and architecture documentation while collaborating closely with software architects and mentoring developers.",
+      "Serve as Senior Software Engineer and Technical Lead on the CCH SureTax enterprise platform, steering backend engineering, architectural alignment, cloud operations, and developer mentorship.",
     responsibilities: [
-      "Design, develop, and modernize enterprise backend services using C#, .NET, SQL Server, Azure, and Angular for the CCH SureTax platform.",
-      "Led modernization of critical enterprise applications from .NET Framework to .NET Core, dramatically improving maintainability and long-term platform evolution.",
-      "Designed and implemented cloud-native solutions using Microsoft Azure, Docker, Kubernetes (AKS), and Azure DevOps CI/CD pipelines.",
-      "Built secure, scalable REST APIs with emphasis on high performance, maintainability, and extensibility.",
-      "Improved application throughput and database response times through Redis caching, SQL stored procedure optimization, and execution plan tuning.",
-      "Contribute to strategic enterprise AI initiatives within CCH SureTax by designing AI-enabled capabilities using Spec-Driven Development (OpenSpec, SpecKit, GitHub Copilot, and OpenAPI).",
-      "Implement enterprise security and identity protocols using OAuth2, OpenID Connect (OIDC), JWT, Single Sign-On (SSO), and Azure Key Vault.",
-      "Collaborate with architects on sequence diagrams and system specifications; mentor developers through code reviews and architecture discussions.",
+      "Provide technical leadership across backend service design, ensuring alignment with enterprise architecture standards, high availability, and software quality benchmarks.",
+      "Drive platform evolution, code reviews, architectural documentation, and technical onboarding for cross-functional engineering teams.",
+      "Collaborate closely with enterprise software architects to evaluate solution designs, API specifications, sequence diagrams, and technology trade-offs.",
+      "Oversee production application health, diagnostics, and performance optimization across Microsoft Azure and Kubernetes (AKS) environments.",
+      "Champion modern engineering practices, including automated testing with xUnit/Moq, Spec-Driven Development, and secure API governance.",
+      "Partner with product managers and business stakeholders to translate complex compliance and tax domain rules into dependable technical deliverables.",
     ],
+    podPractices: {
+      badge: "Delivery Model & Engineering Practices",
+      title: "Pod-Based Engineering & Spec-Driven Development",
+      description:
+        "Work within an evolving pod-based engineering model of small, autonomous, self-sufficient teams aligned to specific platform domains, partnering directly with Product Owners to drive predictable delivery.",
+      points: [
+        "Autonomous Pod Collaboration: Engage in cross-functional pods with direct Product Owner and stakeholder alignment, minimizing handoff latency and maximizing end-to-end feature ownership.",
+        "Spec-Driven Development (SDD): Apply structured specification workflows using OpenSpec and SpecKit to align functional requirements, API contracts, and implementation blueprints before coding begins.",
+        "Disciplined AI-Augmented Delivery: Leverage GitHub Copilot alongside rigorous peer reviews to accelerate implementation velocity and code consistency while targeting faster, more predictable release cycles.",
+      ],
+    },
     technologies: [
       "C#",
       ".NET Core",
@@ -49,10 +62,11 @@ export const experiences: ExperienceItem[] = [
       "Docker",
       "SQL Server",
       "Redis",
+      "GitHub Actions",
       "Azure DevOps",
       "Angular",
+      "SpecKit / OpenSpec",
       "OAuth2 / OIDC",
-      "Spec-Driven AI",
     ],
   },
   {
@@ -62,14 +76,13 @@ export const experiences: ExperienceItem[] = [
     location: "Pune, India",
     period: "Sep 2014 – Jun 2018",
     isCurrent: false,
-    isPlaceholder: false,
     summary:
-      "Engineered enterprise web applications, REST services, and database layers across the full software development lifecycle using the Microsoft .NET technology stack and Azure.",
+      "Engineered scalable enterprise web applications, REST services, and database layers using the Microsoft .NET technology stack and Azure cloud services.",
     responsibilities: [
-      "Developed robust enterprise web applications and backend services using ASP.NET MVC, ASP.NET Web API, AngularJS, and Microsoft Azure.",
-      "Designed relational database schemas, stored procedures, and data access layers using Microsoft SQL Server and Entity Framework.",
-      "Collaborated directly with business stakeholders and cross-functional teams to translate complex functional requirements into scalable technical implementations.",
-      "Supported Azure cloud deployments, production environments, performance optimization, and continuous improvement initiatives in an Agile delivery model.",
+      "Developed backend business logic and RESTful APIs using ASP.NET MVC, ASP.NET Web API, and C#.",
+      "Designed normalized SQL Server database structures, stored procedures, and Entity Framework data access layers.",
+      "Built responsive frontend modules using AngularJS and modern JavaScript to interface with backend services.",
+      "Participated in Agile sprint ceremonies, technical estimation, peer code reviews, and production release support.",
     ],
     technologies: [
       "ASP.NET MVC",

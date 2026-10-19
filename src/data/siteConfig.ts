@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
   highlights: [
     "12+ Years Enterprise .NET & C#",
     "Microsoft Azure & Kubernetes (AKS)",
-    "Distributed Systems, APIs & SQL Tuning",
+    "CI/CD Modernization (GitHub & Azure DevOps)",
     "Enterprise AI & Spec-Driven Development",
   ],
   social: {
@@ -57,9 +57,10 @@ export const siteConfig: SiteConfig = {
   nav: [
     { label: "About", href: "#about" },
     { label: "Expertise", href: "#expertise" },
-    { label: "Projects", href: "#projects" },
+    { label: "Impact", href: "#impact" },
     { label: "Experience", href: "#experience" },
     { label: "Philosophy", href: "#philosophy" },
+    { label: "Lab", href: "#lab" },
     { label: "Contact", href: "#contact" },
   ],
   meta: {

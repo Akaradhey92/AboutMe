@@ -17,7 +17,7 @@ interface Props {
 
 const { project } = Astro.props;
 
-const allProjectsUrl = withBase('/#projects');
+const allProjectsUrl = withBase('/#lab');
 const statusStyles = {
   'In Progress': 'bg-cyan-950/80 text-cyan-300 border-cyan-700/70',
   'Planned': 'bg-amber-950/80 text-amber-300 border-amber-800/70',
@@ -38,7 +38,7 @@ const statusStyles = {
         class="inline-flex items-center space-x-2 text-sm font-medium text-slate-400 hover:text-cyan-400 transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400 rounded py-1 px-2 -ml-2"
       >
         <ArrowLeft class="w-4 h-4" />
-        <span>Back to Portfolio Projects</span>
+        <span>Back to Personal Projects & Lab</span>
       </a>
     </div>
 
@@ -179,7 +179,7 @@ const statusStyles = {
         class="inline-flex items-center space-x-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
       >
         <ArrowLeft class="w-4 h-4" />
-        <span>Return to All Work</span>
+        <span>Return to Personal Projects & Lab</span>
       </a>
 
       <a

@@ -31,6 +31,7 @@ A modern, high-credibility developer portfolio and technical showcase engineered
 │   ├── components/
 │   │   ├── ArchitectureDiagram.astro # Vector system topology graphic
 │   │   ├── Contact.astro             # Direct email & social collaboration section
+│   │   ├── EngineeringImpact.astro   # Enterprise achievements on CCH SureTax
 │   │   ├── ExperienceTimeline.astro  # Professional work history & milestones
 │   │   ├── Expertise.astro           # Core vs learning skills showcase
 │   │   ├── Footer.astro              # Dynamic year & understated sign-off
@@ -38,11 +39,12 @@ A modern, high-credibility developer portfolio and technical showcase engineered
 │   │   ├── Navbar.astro              # Sticky header with mobile drawer
 │   │   ├── Philosophy.astro          # Direct engineering principles
 │   │   ├── ProjectCard.astro         # Reusable project summary card
-│   │   └── ProjectsSection.astro     # Projects catalog container
+│   │   └── ProjectsSection.astro     # Personal projects & lab container
 │   ├── data/
 │   │   ├── experience.ts       # Work experience & career history data
+│   │   ├── impact.ts           # 5 verified enterprise initiatives & tax context
 │   │   ├── philosophy.ts       # Engineering principles & trade-offs
-│   │   ├── projects.ts         # Project metadata, status & architecture notes
+│   │   ├── projects.ts         # Personal project metadata & architecture notes
 │   │   ├── siteConfig.ts       # Personal identity, metadata & social links
 │   │   └── skills.ts           # Categorized production vs learning skills
 │   ├── layouts/

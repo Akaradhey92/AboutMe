@@ -35,15 +35,16 @@ export const skillCategories: SkillCategory[] = [
     badge: "Core Expertise",
     isLearning: false,
     summary:
-      "Enterprise cloud-native infrastructure, automated CI/CD deployment pipelines, and container orchestration.",
+      "Enterprise cloud-native infrastructure, container orchestration, and CI/CD pipeline automation across Azure DevOps and GitHub Actions.",
     skills: [
-      { name: "Microsoft Azure", context: "App Services, Azure Functions, Resource Groups" },
-      { name: "Kubernetes (AKS)", context: "Cluster management, container deployments, ingress" },
+      { name: "CI/CD & Pipeline Automation", context: "End-to-end delivery automation across Azure DevOps and GitHub Actions" },
+      { name: "GitHub Actions", context: "Workflow automation, build validation, and transition toward GitHub-based delivery" },
+      { name: "Azure DevOps", context: "YAML release pipelines, branch policies, and automated deployment gates" },
+      { name: "Git & GitHub", context: "Version control, branching models, pull request reviews, team collaboration" },
+      { name: "Microsoft Azure", context: "App Services, Azure Functions, Resource Groups, cloud hosting" },
+      { name: "Kubernetes (AKS)", context: "Cluster management, container deployments, ingress controllers" },
       { name: "Docker", context: "Containerization, image hardening, multi-stage builds" },
-      { name: "Azure Service Bus", context: "Asynchronous decoupled messaging, queues, topics" },
-      { name: "Azure Blob Storage", context: "Tiered object storage, lifecycle management" },
-      { name: "Azure DevOps & CI/CD", context: "YAML release pipelines, branch policies, automated gates" },
-      { name: "Git", context: "Branching strategies, code review workflows, pull requests" },
+      { name: "Azure Service Bus & Storage", context: "Decoupled asynchronous messaging and tiered Blob storage" },
     ],
   },
   {
