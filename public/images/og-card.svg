@@ -28,24 +28,24 @@
 
   <!-- Headline -->
   <text x="100" y="260" fill="#f8fafc" font-size="52" font-family="sans-serif" font-weight="900">
-    Building reliable software.
+    Ankit Aradhey
   </text>
   <text x="100" y="325" fill="url(#cyanGrad)" font-size="52" font-family="sans-serif" font-weight="900">
-    Engineering scalable systems.
+    Senior Software Engineer
   </text>
 
   <!-- Subtitle -->
   <text x="100" y="400" fill="#94a3b8" font-size="22" font-family="sans-serif">
-    12+ years of enterprise experience across C#, .NET, Microsoft Azure, distributed systems,
+    12+ years of enterprise experience with .NET and Microsoft Azure.
   </text>
   <text x="100" y="435" fill="#94a3b8" font-size="22" font-family="sans-serif">
-    and expanding into applied AI engineering and RAG systems. Based in Pune, India.
+    Software engineering, platform modernization, and applied AI. Based in Pune, India.
   </text>
 
   <!-- Tags Footer -->
   <g transform="translate(100, 500)">
     <rect width="130" height="36" rx="8" fill="#1e293b" />
-    <text x="65" y="23" fill="#cbd5e1" font-size="14" font-family="monospace" text-anchor="middle">.NET 8/9</text>
+    <text x="65" y="23" fill="#cbd5e1" font-size="14" font-family="monospace" text-anchor="middle">.NET</text>
   </g>
   <g transform="translate(245, 500)">
     <rect width="180" height="36" rx="8" fill="#1e293b" />

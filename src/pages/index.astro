@@ -4,8 +4,6 @@ import Hero from '../components/Hero.astro';
 import Expertise from '../components/Expertise.astro';
 import EngineeringImpact from '../components/EngineeringImpact.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
-import Philosophy from '../components/Philosophy.astro';
-import ProjectsSection from '../components/ProjectsSection.astro';
 import Contact from '../components/Contact.astro';
 import { siteConfig } from '../data/siteConfig';
 ---
@@ -17,21 +15,15 @@ import { siteConfig } from '../data/siteConfig';
   <!-- Hero Section -->
   <Hero />
 
-  <!-- 01: Technical Expertise Section -->
-  <Expertise />
-
-  <!-- 02: Engineering Impact (Enterprise Initiatives Centerpiece) -->
+  <!-- Selected professional contributions -->
   <EngineeringImpact />
 
-  <!-- 03: Professional Experience Timeline -->
+  <!-- Work history and education -->
   <ExperienceTimeline />
 
-  <!-- 04: Engineering Philosophy -->
-  <Philosophy />
+  <!-- Core skills -->
+  <Expertise />
 
-  <!-- 05: Personal Projects & Engineering Lab -->
-  <ProjectsSection />
-
-  <!-- 06: Contact & Collaboration -->
+  <!-- Contact -->
   <Contact />
 </BaseLayout>

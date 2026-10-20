@@ -27,7 +27,7 @@ jobs:
       - name: Set up Node.js LTS
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'npm'
 
       - name: Configure GitHub Pages
@@ -35,10 +35,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Build with Astro
-        run: npm run build
+        run: npm run check && npm run build && npm test
         env:
           # Automatically uses subpath if deployed to a project repository (e.g. /my-repo),
           # or root '/' if deployed to a user/organization repository (<username>.github.io).

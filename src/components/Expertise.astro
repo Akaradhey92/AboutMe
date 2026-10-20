@@ -1,103 +1,31 @@
 ---
-import { skillCategories } from '../data/skills';
-import { Server, Layout, Cloud, Database, BrainCircuit, Sparkles } from 'lucide-astro';
-
-const categoryIcons: Record<string, any> = {
-  backend: Server,
-  frontend: Layout,
-  'cloud-platform': Cloud,
-  'data-architecture': Database,
-  'ai-engineering': BrainCircuit,
-};
+import { skillCategories, currentFocus } from '../data/skills';
+import { Server, Monitor, Cloud, Database, BrainCircuit } from 'lucide-astro';
+const icons = [Server, Monitor, Cloud, Database, BrainCircuit];
 ---
 
-<section id="expertise" class="py-16 sm:py-20 border-t border-slate-800/80 bg-navy-950/40 relative">
+<section id="expertise" class="py-14 sm:py-20 border-t border-slate-800/80">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Section Header -->
-    <div class="max-w-3xl mb-12 text-left">
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono mb-4">
-        <span>01 // TECHNICAL EXPERTISE</span>
-      </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-        Core Capabilities & Technology Focus
-      </h2>
-      <p class="mt-3.5 text-base sm:text-lg text-slate-300 leading-relaxed">
-        Organized by domain across 12+ years of enterprise production development, maintaining a clear distinction between battle-tested core competencies and active AI engineering exploration.
-      </p>
-    </div>
-
-    <!-- Expertise Grid: Simplified layout without nested bordered boxes -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skillCategories.map((cat) => {
-        const IconComponent = categoryIcons[cat.id] || Server;
-        const isAI = cat.isLearning;
-
+    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Core Skills</h2>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {skillCategories.map((category, index) => {
+        const Icon = icons[index];
         return (
-          <div
-            class={`rounded-xl p-6 transition-all duration-200 flex flex-col justify-between ${
-              isAI
-                ? 'bg-gradient-to-b from-[#130d2a] to-[#0c081d] border border-purple-500/40 md:col-span-2 lg:col-span-2 shadow-lg shadow-purple-950/10'
-                : 'bg-navy-900/60 border border-slate-800/90 hover:border-slate-700 hover:bg-navy-850/60'
-            }`}
-          >
-            <div>
-              <!-- Header with Icon & Status Badge -->
-              <div class="flex items-center justify-between mb-4">
-                <div class={`w-9 h-9 rounded-lg flex items-center justify-center ${
-                  isAI 
-                    ? 'bg-purple-950/80 text-purple-300 border border-purple-700/60' 
-                    : 'bg-cyan-950/80 text-cyan-400 border border-cyan-800/60'
-                }`}>
-                  <IconComponent class="w-4 h-4" />
-                </div>
-
-                <span class={`text-[11px] font-mono px-2.5 py-0.5 rounded-full font-medium uppercase tracking-wider ${
-                  isAI
-                    ? 'bg-purple-950/90 text-purple-300 border border-purple-700/80 flex items-center gap-1.5'
-                    : 'bg-slate-800/80 text-slate-300 border border-slate-700/60'
-                }`}>
-                  {isAI && <Sparkles class="w-3 h-3 text-purple-400" />}
-                  {cat.badge}
-                </span>
-              </div>
-
-              <!-- Category Title & Summary -->
-              <h3 class="text-xl font-bold text-white mb-2 tracking-tight">
-                {cat.title}
-              </h3>
-              <p class="text-sm text-slate-300 leading-relaxed mb-5">
-                {cat.summary}
-              </p>
-
-              <!-- Streamlined Skills List: Clean rows without nested card borders -->
-              <div class={`space-y-1 pt-3 border-t ${isAI ? 'border-purple-900/40 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1' : 'border-slate-800/70'}`}>
-                {cat.skills.map((skill) => (
-                  <div class="flex flex-col py-1.5 border-b border-slate-800/40 last:border-0">
-                    <span class="text-sm font-semibold text-slate-100 flex items-center gap-2">
-                      <span class={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isAI ? 'bg-purple-400' : 'bg-cyan-400'}`}></span>
-                      <span>{skill.name}</span>
-                    </span>
-                    {skill.context && (
-                      <span class="text-xs text-slate-400 font-mono mt-0.5 pl-3.5 leading-snug">
-                        {skill.context}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <!-- Footer note for AI section -->
-            {isAI && (
-              <div class="mt-5 pt-3.5 border-t border-purple-900/40 text-xs text-purple-300/80 font-mono">
-                Applied AI exploration: Grounding LLMs with enterprise search, context retrieval, and deterministic evaluation.
-              </div>
-            )}
+          <div class="border-t border-slate-800 pt-5">
+            <h3 class="flex items-center gap-2 text-base font-semibold text-white mb-4">
+              <Icon class="w-4 h-4 text-cyan-400" aria-hidden="true" />
+              {category.title}
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-300">
+              {category.skills.map((skill) => <li>{skill}</li>)}
+            </ul>
           </div>
         );
       })}
     </div>
-
+    <aside class="mt-8 border-l-2 border-cyan-600 pl-5 sm:pl-6" aria-labelledby="current-focus-title">
+      <h3 id="current-focus-title" class="text-lg font-semibold text-white">Currently Working On</h3>
+      <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">{currentFocus}</p>
+    </aside>
   </div>
 </section>

@@ -17,7 +17,7 @@ const homeUrl = withBase('/');
         class="group flex items-center space-x-2 text-slate-100 font-semibold text-lg tracking-tight hover:text-cyan-400 transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-md py-1 px-1.5 -ml-1.5"
         aria-label={`${siteConfig.name} - Home`}
       >
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white font-mono font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+        <span class="w-8 h-8 rounded-lg bg-linear-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white font-mono font-bold text-sm shadow-xs group-hover:scale-105 transition-transform">
           A
         </span>
         <div class="flex flex-col">
@@ -31,7 +31,7 @@ const homeUrl = withBase('/');
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main Navigation">
+      <nav class="hidden lg:flex items-center space-x-1 lg:space-x-2" aria-label="Main Navigation">
         {siteConfig.nav.map((item) => (
           <a
             href={withBase(`/${item.href}`)}
@@ -43,12 +43,12 @@ const homeUrl = withBase('/');
       </nav>
 
       <!-- CTA Action Button -->
-      <div class="hidden sm:flex items-center space-x-3">
+      <div class="hidden lg:flex items-center space-x-3">
         <a
           href={resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-300 bg-cyan-950/60 border border-cyan-800/80 hover:bg-cyan-900/40 hover:border-cyan-500 rounded-md transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-cyan-400"
+          class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-300 bg-cyan-950/60 border border-cyan-800/80 hover:bg-cyan-900/40 hover:border-cyan-500 rounded-md transition-all shadow-xs focus-visible:ring-2 focus-visible:ring-cyan-400"
         >
           <FileText class="w-3.5 h-3.5" />
           <span>Resume</span>
@@ -56,7 +56,7 @@ const homeUrl = withBase('/');
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="flex items-center sm:hidden">
+      <div class="flex items-center lg:hidden">
         <button
           type="button"
           id="mobile-menu-button"
@@ -76,7 +76,7 @@ const homeUrl = withBase('/');
   <!-- Mobile Dropdown Navigation Menu -->
   <div 
     id="mobile-menu" 
-    class="hidden sm:hidden border-b border-slate-800 bg-[#0a0f1d] px-4 pt-2 pb-6 space-y-2 transition-all shadow-2xl"
+    class="hidden lg:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-slate-800 bg-[#0a0f1d] px-4 pt-2 pb-6 space-y-2 transition-all shadow-2xl"
   >
     <nav class="flex flex-col space-y-1" aria-label="Mobile Navigation">
       {siteConfig.nav.map((item) => (
@@ -136,7 +136,12 @@ const homeUrl = withBase('/');
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
       closeMenu();
+      menuButton.focus();
     }
+  });
+
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+    if (event.matches) closeMenu();
   });
 </script>
 

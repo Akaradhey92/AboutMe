@@ -1,9 +1,10 @@
 ---
-import { projects } from '../data/projects';
+import { publishedProjects as projects } from '../data/projects';
 import ProjectCard from './ProjectCard.astro';
 import { Info, FlaskConical } from 'lucide-astro';
 ---
 
+{projects.length > 0 && (
 <section id="lab" class="py-16 sm:py-24 border-t border-slate-800/80 bg-navy-950/40 relative">
   <!-- Anchor alias for backward-compatible links -->
   <span id="projects" class="sr-only" aria-hidden="true"></span>
@@ -26,9 +27,9 @@ import { Info, FlaskConical } from 'lucide-astro';
       </div>
 
       <!-- Authenticity Disclaimer / Notice -->
-      <div class="p-4 rounded-xl bg-navy-900/60 border border-slate-800/80 max-w-sm text-left flex-shrink-0">
+      <div class="p-4 rounded-xl bg-navy-900/60 border border-slate-800/80 max-w-sm text-left shrink-0">
         <div class="flex items-center space-x-2 text-xs font-mono text-cyan-400 mb-1">
-          <Info class="w-3.5 h-3.5 flex-shrink-0" />
+          <Info class="w-3.5 h-3.5 shrink-0" />
           <span class="font-semibold uppercase">Lab Transparency Standard</span>
         </div>
         <p class="text-xs text-slate-300 leading-relaxed">
@@ -46,3 +47,4 @@ import { Info, FlaskConical } from 'lucide-astro';
 
   </div>
 </section>
+)}

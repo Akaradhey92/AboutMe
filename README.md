@@ -9,7 +9,8 @@ A modern, high-credibility developer portfolio and technical showcase engineered
 - **Static Site Generation (SSG)**: Zero-server dependency, ultra-fast TTFB, optimized for free hosting on **GitHub Pages**.
 - **Dynamic Base-Path Resolution**: Works out-of-the-box whether deployed to a user domain (`<username>.github.io`) or a repository subpath (`<username>.github.io/<repo-name>`).
 - **Centralized Data Model**: All biographical details, skills, projects, work milestones, and engineering principles live in dedicated TypeScript data files.
-- **Deep Technical Case Studies**: Individual architectural deep-dive pages (`/projects/[slug]`) detailing problem statements, component pipelines, and engineering trade-offs.
+- **Focused Homepage**: Introduction, three selected professional contributions, work history and education, core skills, and direct contact links.
+- **Project Drafts**: Personal-project content is retained in `src/data/projects.ts` with `published: false`. Drafts do not generate public routes. Set `published: true` only when a project is ready to share; the homepage lab section is currently unmounted.
 - **Accessibility & UX**: Semantic HTML5, WCAG AA contrast ratios, visible keyboard focus rings, skip-to-main-content link, and strict respect for `prefers-reduced-motion`.
 - **Zero Hallucinated Metrics**: No arbitrary percentage progress bars, no fake client logos, and no fabricated project outcomes.
 
@@ -93,6 +94,13 @@ npm run check
 npm run build
 ```
 The compiled, optimized static files are emitted into the `dist/` directory.
+
+Use Node.js 22.22 or later (CI uses Node.js 24). After building, run `npm test`
+to verify page metadata, deployment paths, local assets, and clipboard feedback.
+For a subpath build, set the same `BASE_PATH` for both the build and tests.
+The stylesheet uses Tailwind 4 with the existing theme in `tailwind.config.mjs`.
+See the [Astro migration guide](https://docs.astro.build/en/guides/upgrade-to/v7/)
+and [Tailwind migration guide](https://tailwindcss.com/docs/upgrade-guide).
 
 ### 6. Preview Production Build Locally
 ```bash

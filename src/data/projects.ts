@@ -1,4 +1,5 @@
 export interface Project {
+  published: boolean;
   id: string;
   slug: string;
   title: string;
@@ -20,6 +21,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ai-knowledge-assistant",
+    published: false,
     slug: "ai-knowledge-assistant",
     title: "AI Knowledge Assistant (RAG Document Q&A)",
     status: "In Progress",
@@ -61,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     id: "cloud-native-dotnet-api",
+    published: false,
     slug: "cloud-native-dotnet-api",
     title: "Cloud-Native .NET Web API Reference",
     status: "In Progress",
@@ -102,6 +105,7 @@ export const projects: Project[] = [
   },
   {
     id: "homelab-infrastructure",
+    published: false,
     slug: "homelab-infrastructure",
     title: "Homelab & Self-Hosted Infrastructure",
     status: "Planned",
@@ -141,6 +145,7 @@ export const projects: Project[] = [
   },
   {
     id: "cloud-architecture-reference",
+    published: false,
     slug: "cloud-architecture-reference",
     title: "Azure Cloud Architecture Reference Blueprint",
     status: "Planned",
@@ -182,3 +187,6 @@ export const projects: Project[] = [
     hasCaseStudy: true,
   },
 ];
+
+// Retain project material as drafts until it is ready to share publicly.
+export const publishedProjects = projects.filter((project) => project.published);

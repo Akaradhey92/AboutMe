@@ -1,96 +1,36 @@
-export interface SkillItem {
-  name: string;
-  context?: string;
-}
-
 export interface SkillCategory {
   id: string;
   title: string;
-  badge: string;
-  isLearning?: boolean;
-  summary: string;
-  skills: SkillItem[];
+  skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: "backend",
-    title: "Backend & Frameworks",
-    badge: "Core Expertise",
-    isLearning: false,
-    summary:
-      "Modern server-side architecture, enterprise .NET Core modernization, high-performance REST APIs, and microservices.",
-    skills: [
-      { name: "C#", context: "Modern language features, asynchronous patterns, LINQ" },
-      { name: ".NET Core & .NET", context: "Core modernization, dependency injection, middleware" },
-      { name: "ASP.NET Web API & MVC", context: "RESTful services, content negotiation, OpenAPI" },
-      { name: "Entity Framework", context: "EF Core migrations, query optimization, repositories" },
-      { name: "WCF & Legacy Services", context: "Enterprise migration to modern .NET microservices" },
-      { name: "Testing (xUnit, Moq)", context: "Unit testing, mock frameworks, integration test suites" },
-    ],
+    id: 'backend',
+    title: 'Backend',
+    skills: ['C# & .NET', 'ASP.NET Web API & MVC', 'Entity Framework', 'REST & OpenAPI', 'xUnit & Moq'],
   },
   {
-    id: "cloud-platform",
-    title: "Cloud & DevOps",
-    badge: "Core Expertise",
-    isLearning: false,
-    summary:
-      "Enterprise cloud-native infrastructure, container orchestration, and CI/CD pipeline automation across Azure DevOps and GitHub Actions.",
-    skills: [
-      { name: "CI/CD & Pipeline Automation", context: "End-to-end delivery automation across Azure DevOps and GitHub Actions" },
-      { name: "GitHub Actions", context: "Workflow automation, build validation, and transition toward GitHub-based delivery" },
-      { name: "Azure DevOps", context: "YAML release pipelines, branch policies, and automated deployment gates" },
-      { name: "Git & GitHub", context: "Version control, branching models, pull request reviews, team collaboration" },
-      { name: "Microsoft Azure", context: "App Services, Azure Functions, Resource Groups, cloud hosting" },
-      { name: "Kubernetes (AKS)", context: "Cluster management, container deployments, ingress controllers" },
-      { name: "Docker", context: "Containerization, image hardening, multi-stage builds" },
-      { name: "Azure Service Bus & Storage", context: "Decoupled asynchronous messaging and tiered Blob storage" },
-    ],
+    id: 'frontend',
+    title: 'Frontend & Web',
+    skills: ['Angular', 'TypeScript', 'JavaScript', 'AngularJS (earlier projects)'],
   },
   {
-    id: "data-architecture",
-    title: "Data, Security & Architecture",
-    badge: "Core Expertise",
-    isLearning: false,
-    summary:
-      "Relational data persistence, in-memory caching, distributed architecture design, and enterprise zero-trust identity.",
-    skills: [
-      { name: "Microsoft SQL Server", context: "Stored procedures, indexing, execution plans, query tuning" },
-      { name: "Redis Caching", context: "Distributed cache, high-throughput session state, caching patterns" },
-      { name: "OAuth2 & OIDC", context: "OpenID Connect, JWT tokens, SSO integration" },
-      { name: "Azure Key Vault", context: "Secret management, certificates, encryption keys" },
-      { name: "Microservices & Distributed Systems", context: "Decoupled services, event-driven design, resiliency" },
-      { name: "API Design & OpenAPI", context: "REST contract governance, Swagger/OpenAPI specifications" },
-      { name: "SOLID & Design Patterns", context: "Domain design, separation of concerns, maintainability" },
-    ],
+    id: 'cloud-platform',
+    title: 'Cloud & Delivery',
+    skills: ['Microsoft Azure', 'Docker', 'Kubernetes (AKS)', 'Azure DevOps CI/CD', 'GitHub Actions', 'Git'],
   },
   {
-    id: "frontend",
-    title: "Frontend Engineering",
-    badge: "Production Applied",
-    isLearning: false,
-    summary:
-      "Client-side web development building intuitive enterprise dashboards and single-page applications.",
-    skills: [
-      { name: "Angular", context: "Enterprise components, TypeScript, RxJS, routing" },
-      { name: "TypeScript", context: "Strict typing, interfaces, generics, maintainable architecture" },
-      { name: "JavaScript", context: "Modern ES6+, DOM manipulation, asynchronous programming" },
-      { name: "HTML & CSS", context: "Responsive layouts, Flexbox, CSS Grid, semantic standards" },
-    ],
+    id: 'data-architecture',
+    title: 'Data & Security',
+    skills: ['SQL Server', 'Redis', 'OAuth2 & OIDC', 'JWT & SSO', 'Azure Key Vault'],
   },
   {
-    id: "ai-engineering",
-    title: "Enterprise AI & Modernization",
-    badge: "Applied Enterprise AI",
-    isLearning: false,
-    summary:
-      "Contributing to enterprise AI initiatives within CCH SureTax, including RAG-based SKU classification, agentic tax return filing automation, and structured DOR web extraction.",
-    skills: [
-      { name: "RAG & LLM Integration", context: "FAB-hosted RAG agents, prompt engineering, confidence-based classification" },
-      { name: "Agentic Browser Automation", context: "Stagehand, Playwright, LLM tool calling, human-in-the-loop workflows" },
-      { name: "Structured Data Extraction", context: "PDF-to-JSON parsing, web scraping with Quartz.NET, schema validation" },
-      { name: "Spec-Driven Workflows", context: "OpenSpec, SpecKit, and contract-first API design" },
-      { name: "GitHub Copilot Integration", context: "Augmenting engineering workflows with disciplined AI tooling" },
-    ],
+    id: 'ai-engineering',
+    title: 'Applied AI',
+    skills: ['RAG & Indexes', 'Foundation & Beyond Agent', 'OpenSpec & SpecKit', 'GitHub Copilot'],
   },
 ];
+
+export const currentFocus =
+  'I’m working on AI-enabled capabilities within CCH SureTax. Recent work spans two projects in a newly introduced pod-based engineering model, collaborating directly with Product Owners and stakeholders. I use OpenSpec, SpecKit, GitHub Copilot, and OpenAPI to structure requirements and implementation.';

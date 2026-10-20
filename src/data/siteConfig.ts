@@ -36,7 +36,7 @@ export const siteConfig: SiteConfig = {
   title: "Senior Software Engineer | Enterprise Platform Engineering",
   tagline: "Building Reliable Software. Engineering Scalable Systems.",
   shortBio:
-    "Senior Software Engineer with 12+ years of experience building, modernizing, and supporting enterprise software platforms across C#, .NET, Microsoft Azure, Kubernetes, SQL Server, and Angular. Focused on backend engineering, cloud modernization, and enterprise integrations within the CCH SureTax platform at Wolters Kluwer.",
+    "I’m a Senior Software Engineer based in Pune, with 12+ years of experience across .NET, Azure, and web applications. At Wolters Kluwer, I contribute to enterprise platform modernization and AI-enabled capabilities within CCH SureTax.",
   location: "Pune, India",
   phone: "+91-8817381752",
   currentCompany: "Wolters Kluwer",
@@ -45,29 +45,27 @@ export const siteConfig: SiteConfig = {
   highlights: [
     "12+ Years Enterprise .NET & C#",
     "Microsoft Azure & Kubernetes (AKS)",
-    "CI/CD Modernization (GitHub & Azure DevOps)",
+    "CI/CD with Azure DevOps",
     "Applied AI & Modern Workflows",
   ],
   social: {
-    github: "https://github.com/akaradhey",
+    github: "https://github.com/akaradhey92",
     linkedin: "https://www.linkedin.com/in/ankit-kumar-aradhey",
     email: "akaradhey92@gmail.com",
     resumePdf: "/resume/resume.pdf",
   },
   nav: [
     { label: "About", href: "#about" },
-    { label: "Expertise", href: "#expertise" },
-    { label: "Impact", href: "#impact" },
+    { label: "Work", href: "#impact" },
     { label: "Experience", href: "#experience" },
-    { label: "Philosophy", href: "#philosophy" },
-    { label: "Lab", href: "#lab" },
+    { label: "Skills", href: "#expertise" },
     { label: "Contact", href: "#contact" },
   ],
   meta: {
     title: "Ankit Aradhey | Senior Software Engineer (.NET, Azure & AI Systems)",
     description:
       "Senior Software Engineer based in Pune, India, with 12+ years of enterprise experience in .NET Core, Microsoft Azure, Kubernetes, SQL Server, and Enterprise AI initiatives.",
-    siteUrl: "https://akaradhey.github.io",
-    ogImage: "/images/og-card.svg",
+    siteUrl: "https://akaradhey92.github.io",
+    ogImage: "/images/og-card.png",
   },
 };
